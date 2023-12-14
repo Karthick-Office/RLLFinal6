@@ -22,8 +22,8 @@ import com.ecommerce.qa.utilities.ExcelDataProvider;
 public class SignUpSteps {
 	
 	SoftAssert soft = new SoftAssert();
-	public String expectedUrlSubstring = "challenge";
-	public WebDriverWait Wait =new WebDriverWait(TestBase.driver,Duration.ofSeconds(120000));
+	//public String expectedUrlSubstring = "challenge";
+	//public WebDriverWait Wait =new WebDriverWait(TestBase.driver,Duration.ofSeconds(120000));
 	
 	static String email;
 	SignUpPageObjects sob = new SignUpPageObjects(TestBase.driver);
@@ -71,9 +71,9 @@ public class SignUpSteps {
 		
 		try{
 			
-			sob.clickCreateBtn();
-			 Wait.until(ExpectedConditions.not(ExpectedConditions.urlContains(expectedUrlSubstring)));
-			
+  			sob.clickCreateBtn();
+			//Wait.until(ExpectedConditions.not(ExpectedConditions.urlContains(expectedUrlSubstring)));
+			Thread.sleep(120000);
 			boolean val = sob.validationDemo(email, sob.validate_Email());	
 			soft.assertEquals(true, val);
 				

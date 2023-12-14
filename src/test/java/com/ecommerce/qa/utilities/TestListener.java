@@ -6,16 +6,14 @@ import org.testng.IRetryAnalyzer;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import com.ecommerce.qa.steps.ContactUsTest;
 import com.ecommerce.qa.steps.TestBase;
 
 public class TestListener implements ITestListener, IRetryAnalyzer {
 
-    private static final int MAX_RETRY_COUNT = 3;
+    private static final int MAX_RETRY_COUNT = 2;
     private int retryCount = 0;
 
-    Logger log = LogManager.getLogger(ContactUsTest.class);
+    Logger log = LogManager.getLogger(TestListener.class);
 
     @Override
     public void onTestStart(ITestResult result) {
